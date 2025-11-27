@@ -1,7 +1,10 @@
 # Plusivo-Wireless-ESP8266
 
-## Microcontroller 
-I kursen har vi använt oss av ett **Plusivo Wireless Super Starter Kit** med microcontrollern **ESP8266**, som har möjlighet till WiFi-anslutning för att skicka och ta emot data, samt går att programmera med hjälp av Arduino IDE.
+## Översikt 
+Nedan kommer jag att beskriva hur man kan testa att programmera utvecklingskortet **NodeMCU** i programmet **Arduino IDE**. I den här kursen så kommer vi att använda oss av **NodeMCU** och **Arduino IDE** för att bygga sensorer och samla in data som vi sedan kan visualisera, för kunna bygga kunskap utifrån den insamlade datan. 
+
+## Microcontroller/NodeMCU? 
+I kursen använder vi oss av ett **Plusivo Wireless Super Starter Kit** som innehåller en **NodeMCU**, vilket är ett utvecklingskort byggt på microcontrollern **ESP8266**, som har möjlighet till WiFi-anslutning för att skicka och ta emot data, samt går att programmera med hjälp av Arduino IDE.
 
 <img width="829" height="820" alt="Screenshot 2025-11-27 at 14 31 39" src="https://github.com/user-attachments/assets/3e4b5148-dabc-4fb7-ba6d-f4895bb133e3" />
 
@@ -9,7 +12,10 @@ I kursen har vi använt oss av ett **Plusivo Wireless Super Starter Kit** med mi
 **ESP8266** går delvis att integrera med exempelvis en Arduino eller Raspberry Pi som ett WiFi-nätverkskort, men kan även användas fristående som en microcontroller. 
 Utöver möjligheten till WiFi-anslutning så har ESP8266 flera fördelar, bland annat så är den billig och den fungerar mycket bra för IoT-projekt (Internet of Things), för hemautomation (som exempelvis att styra lampor), och kan kopplas till sensorer för att samla in data. Exempelvis kan det vara sensorer för rörelse, ljus, ljud, temperatur eller luftfuktighet. Processorn i ESP8266 är en Tensilica LX106. 
 
+## Såhär ser vår NodeMCU ut
 <img width="754" height="715" alt="Screenshot 2025-11-27 at 14 34 50" src="https://github.com/user-attachments/assets/d4383f59-3d00-4461-9d30-620310647b4d" />
+
+Den silvriga grejen längst ned är en USB-port, som vi kommer att använda för att koppla in vår microcontroller till datorn och programmera den i Arduino IDE. 
 
 ## Arduino IDE
 
@@ -55,11 +61,11 @@ Projekt i Arduino IDE kallas för "sketch". Det finns olika exempelsketches som 
 
 <img width="776" height="893" alt="Screenshot 2025-11-27 at 15 15 32" src="https://github.com/user-attachments/assets/762332a9-4a37-4fe8-83a4-fe658006aa5d" />
 
-Blink kommer nu att öppnas i en ny ruta. Högst upp i koden finns det en beskrivning av vad programmet gör. En LEP-lampa kommer att blinka med en sekunds intervall. 
+Blink kommer nu att öppnas i en ny ruta. Högst upp i koden finns det en beskrivning av vad programmet gör. En inbyggd LED-lampa kommer att blinka med en sekunds intervall. 
 
 <img width="1511" height="787" alt="Screenshot 2025-11-27 at 15 19 07" src="https://github.com/user-attachments/assets/b52e302b-ae65-4cf4-ab88-c3560e1f24da" />
 
-Man kan enkelt ändra intervallerna för att få lampan att blinka snabbare eller långsammare. Det gör man där det står ```delay(1000);```. Hastigheten är alltså 1000 millisekunder. Om man ändrar båda värden till exempelvis 500 så kommer lampan att blinka i 500 millisekunder, det vill säga 0,5 sekunder. 
+Man kan enkelt ändra intervallerna för att få lampan att blinka snabbare eller långsammare. Det gör man där det står ```delay(1000);```. Hastigheten är alltså 1000 millisekunder. Om man ändrar båda värdena till exempelvis 500 så kommer lampan att blinka i 500 millisekunder, det vill säga 0,5 sekunder. 
 
 <img width="651" height="150" alt="Screenshot 2025-11-27 at 15 22 37" src="https://github.com/user-attachments/assets/339ffcff-e54f-43b7-b12f-0850a0c8775e" />
 <img width="651" height="150" alt="Screenshot 2025-11-27 at 15 23 29" src="https://github.com/user-attachments/assets/81533553-1d79-4b66-94f7-d01fdfbcc020" />
@@ -68,8 +74,26 @@ När man är färdig med koden så behöver man trycka på **Verify** för att k
 
 <img width="360" height="105" alt="Screenshot 2025-11-27 at 15 26 31" src="https://github.com/user-attachments/assets/6465354d-8f5c-4606-8dd9-b67c6191e4ca" />
 
-Vänta på att kompileringen ska ladda klart, och tryck sedan på den blå knappen med en högerpil precis bredvid, för att ladda upp koden till din microcontroller. 
+Vänta på att kompileringen ska ladda klart, och tryck sedan på den blå knappen med en högerpil precis bredvid (**Upload**), för att ladda upp koden till din microcontroller. 
 
 <img width="385" height="141" alt="Screenshot 2025-11-27 at 15 29 24" src="https://github.com/user-attachments/assets/48790ace-a236-465b-a684-f1c5fce40939" />
 
 När uppladdningen är färdig så bör den lilla inbyggda lampan på din microcontroller blinka i den hastighet du har angivit! 
+
+## Koden för Blink ser ut såhär: 
+
+```*/
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(1000);                      // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  delay(1000);                      // wait for a second
+} 
