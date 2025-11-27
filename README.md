@@ -44,7 +44,7 @@ Sedan trycker du på den andra ikonen ovanifrån i menyn till vänster för att 
 
 
 ## Portinitialisering 
-ESP8266 går att ansluta till datorn via USB, vilket gör det möjligt att programmera den från sin dator med hjälp av Arduino IDE. Detta gör du genom att koppla in en micro USB-sladd till USB-A eller USB-C (beroende på vad du har för USB-portar på din dator).  
+Microcontrollern går att ansluta till datorn via USB, vilket gör det möjligt att programmera den från sin dator med hjälp av Arduino IDE. Detta gör du genom att koppla in en micro USB-sladd till USB-A eller USB-C (beroende på vad du har för USB-portar på din dator).  
 
 <img width="689" height="620" alt="Screenshot 2025-11-27 at 14 58 14" src="https://github.com/user-attachments/assets/ed9bab50-e9f0-4b9c-95b3-8abe467972c8" />
 
