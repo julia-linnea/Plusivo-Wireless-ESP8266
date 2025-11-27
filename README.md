@@ -3,7 +3,7 @@
 ## Översikt 
 Nedan kommer jag att beskriva hur man kan testa att programmera utvecklingskortet **NodeMCU** i programmet **Arduino IDE**. I den här kursen så kommer vi att använda oss av **NodeMCU** och **Arduino IDE** för att bygga sensorer och samla in data som vi sedan kan visualisera, för kunna bygga kunskap utifrån den insamlade datan. 
 
-## Microcontroller/NodeMCU? 
+## Microcontroller/NodeMCU
 I kursen använder vi oss av ett **Plusivo Wireless Super Starter Kit** som innehåller en **NodeMCU**, vilket är ett utvecklingskort byggt på microcontrollern **ESP8266**, som har möjlighet till WiFi-anslutning för att skicka och ta emot data, samt går att programmera med hjälp av Arduino IDE.
 
 <img width="829" height="820" alt="Screenshot 2025-11-27 at 14 31 39" src="https://github.com/user-attachments/assets/3e4b5148-dabc-4fb7-ba6d-f4895bb133e3" />
