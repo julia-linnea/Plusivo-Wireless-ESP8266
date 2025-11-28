@@ -82,7 +82,7 @@ När uppladdningen är färdig så bör den lilla inbyggda lampan på din microc
 
 ## Koden för Blink ser ut såhär: 
 
-```*/
+```C++ */
 
 // the setup function runs once when you press reset or power the board
 void setup() {
